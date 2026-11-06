@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Detalle del evento · TiquetaDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="evento-detalle" data-rol="">
+    <header id="navbar"></header>
+    <main class="wrap grid g2">
+        <article class="card" style="padding:0;overflow:hidden">
+            <div class="poster" id="poster" style="height:240px;border-radius:0"></div>
+            <div style="padding:26px"><span class="tag" id="categoria"></span>
+                <h1 id="titulo" style="margin:8px 0">Cargando…</h1>
+                <p class="muted" id="info"></p>
+                <p id="descripcion" style="margin-top:16px"></p>
+            </div>
+        </article>
+        <aside class="card">
+            <h2>Selecciona tus tickets</h2>
+            <div id="tipos"></div>
+            <p class="note">Máximo 10 tickets por compra.</p>
+            <div class="total"><span>Total</span><span class="price" id="total">RD$ 0</span></div>
+            <p class="err" id="errCompra"></p><button class="btn full" id="btnComprar" type="button" disabled>Continuar
+                al pago</button>
+        </aside>
+    </main>
+    <div id="toast" class="toast" hidden></div>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/evento-detalle.js"></script>
+</body>
+
+</html>

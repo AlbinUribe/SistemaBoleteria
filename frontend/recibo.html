@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Recibo · TiquetaDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="recibo" data-rol="USUARIO">
+    <header id="navbar"></header>
+    <main class="wrap" style="max-width:640px">
+        <div class="card">
+            <div class="okicon">✓</div>
+            <h1 style="text-align:center">¡Compra exitosa!</h1>
+            <p class="muted" id="meta" style="text-align:center"></p>
+            <div class="tw">
+                <table style="margin-top:20px">
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th>Tipo</th>
+                            <th class="r">Cant.</th>
+                            <th class="r">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lineas"></tbody>
+                </table>
+            </div>
+            <div class="total"><span>Total pagado</span><span class="price" id="total"></span></div>
+            <div class="acciones" style="display:flex;gap:12px;margin-top:22px"><button class="btn" id="btnImprimir"
+                    type="button" style="flex:1">Descargar PDF</button><a class="btn out" href="mis-tickets.html"
+                    style="flex:1">Ver mis tickets</a></div>
+        </div>
+    </main>
+    <div id="toast" class="toast" hidden></div>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/recibo.js"></script>
+</body>
+
+</html>

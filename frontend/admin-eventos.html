@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gestión de eventos · TiquetaDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="admin-eventos" data-rol="ADMIN">
+    <header id="navbar"></header>
+    <main class="wrap">
+        <h1>Gestión de eventos</h1>
+        <div class="grid gadm" style="margin-top:20px">
+            <section class="card">
+                <h2>Eventos</h2>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Evento</th>
+                                <th>Fecha</th>
+                                <th>Lugar</th>
+                                <th>Categoría</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventosAdmin"></tbody>
+                    </table>
+                </div>
+                <h2 style="margin-top:28px">Tipos de ticket <span class="muted" id="eventoSel">(selecciona un
+                        evento)</span></h2>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th class="r">Precio</th>
+                                <th class="r">Disponibles</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tiposAdmin"></tbody>
+                    </table>
+                </div>
+                <form id="formTipo" class="grid g4" novalidate>
+                    <div class="f"><label for="tNombre">Tipo</label><input id="tNombre" name="tNombre" type="text"
+                            required maxlength="50" placeholder="General, VIP…"><small class="err"></small></div>
+                    <div class="f"><label for="tPrecio">Precio (RD$)</label><input id="tPrecio" name="tPrecio"
+                            type="number" required min="0" step="0.01"><small class="err"></small></div>
+                    <div class="f"><label for="tCantidad">Cantidad</label><input id="tCantidad" name="tCantidad"
+                            type="number" required min="0" step="1"><small class="err"></small></div>
+                    <button class="btn sm" type="submit">Agregar</button>
+                </form>
+            </section>
+            <section class="card">
+                <h2 id="tituloForm">Nuevo evento</h2>
+                <form id="formEvento" novalidate><input type="hidden" id="eventoId">
+                    <div class="f"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text"
+                            required maxlength="150"><small class="err"></small></div>
+                    <div class="f"><label for="categoriaId">Categoría</label><select id="categoriaId" required>
+                            <option value="">Selecciona…</option>
+                        </select><small class="err"></small></div>
+                    <div class="grid g2e">
+                        <div class="f"><label for="fecha">Fecha</label><input id="fecha" name="fecha" type="date"
+                                required><small class="err"></small></div>
+                        <div class="f"><label for="hora">Hora</label><input id="hora" name="hora" type="time"
+                                required><small class="err"></small></div>
+                    </div>
+                    <div class="f"><label for="lugar">Lugar</label><input id="lugar" name="lugar" type="text" required
+                            maxlength="150"><small class="err"></small></div>
+                    <div class="f"><label for="descripcion">Descripción</label><textarea id="descripcion"
+                            rows="3"></textarea><small class="err"></small></div>
+                    <div class="f"><label for="imagen">Imagen (JPG, PNG o WEBP, máx. 5 MB)</label><input id="imagen"
+                            type="file" accept="image/jpeg,image/png,image/webp"><small class="err"></small><img
+                            id="preview" class="prev" alt="Vista previa" hidden></div>
+                    <p class="alert" id="msg" hidden></p><button class="btn full" type="submit">Guardar
+                        evento</button><button class="btn out full" id="btnCancelar" type="button" hidden>Cancelar
+                        edición</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <div id="toast" class="toast" hidden></div>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/admin-eventos.js"></script>
+</body>
+
+</html>

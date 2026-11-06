@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Reportes · TiquetaDo</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="admin-reportes" data-rol="ADMIN">
+
+    <header id="navbar"></header>
+
+    <main class="wrap">
+        <h1>Reportes de ventas</h1>
+
+        <form id="formRango" class="card grid gr" style="margin:18px 0">
+
+            <div><label for="desde">Desde</label>
+                <input id="desde" type="date">
+            </div>
+
+            <div>
+                <label for="hasta">Hasta</label><input id="hasta" type="date">
+            </div>
+
+            <button class="btn" type="submit">Filtrar</button>
+
+        </form>
+
+        <div class="grid g3" style="margin-bottom:22px">
+
+            <div class="card stat">
+                <span class="muted">Tickets vendidos</span>
+                <b id="stTickets">0</b>
+            </div>
+
+            <div class="card stat">
+                <span class="muted">Ingresos</span>
+                <b id="stIngresos">RD$ 0</b>
+            </div>
+
+            <div class="card stat">
+                <span class="muted">Eventos con ventas</span>
+                <b id="stEventos">0</b>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Ventas por evento</h2>
+
+            <div class="tw">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th class="r">Vendidos</th>
+                            <th class="r">Ingresos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reporte"></tbody>
+                </table>
+            </div>
+
+            <p id="vacio" class="muted" hidden>No hay ventas en ese rango.</p>
+        </div>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/admin-reportes.js"></script>
+</body>
+
+</html>

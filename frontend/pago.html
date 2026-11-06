@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pago · TiquetaDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="pago" data-rol="USUARIO">
+    <header id="navbar"></header>
+    <main class="wrap grid g2">
+        <form id="formPago" class="card" novalidate>
+            <h1>Pago</h1>
+            <p class="muted">Pago simulado: no se procesa ni se guarda ningún dato real.</p>
+            <div class="f"><label for="titular">Nombre en la tarjeta</label><input id="titular" name="titular"
+                    type="text" required minlength="3" autocomplete="cc-name"><small class="err"></small></div>
+            <div class="f"><label for="tarjeta">Número de tarjeta</label><input id="tarjeta" name="tarjeta" type="text"
+                    required inputmode="numeric" pattern="[0-9 ]{13,19}" maxlength="19" autocomplete="cc-number"
+                    placeholder="0000 0000 0000 0000"><small class="err"></small></div>
+            <div class="grid g2e">
+                <div class="f"><label for="vence">Vencimiento</label><input id="vence" name="vence" type="text" required
+                        pattern="(0[1-9]|1[0-2])/[0-9]{2}" maxlength="5" placeholder="MM/AA"><small class="err"></small>
+                </div>
+                <div class="f"><label for="cvv">CVV</label><input id="cvv" name="cvv" type="password" required
+                        inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" autocomplete="cc-csc"><small
+                        class="err"></small></div>
+            </div>
+            <p class="alert" id="msg" hidden></p><button class="btn full" id="btnPagar" type="submit">Confirmar
+                pago</button>
+        </form>
+        <aside class="card">
+            <h2>Resumen</h2>
+            <div id="resumen"></div>
+            <div class="total"><span>Total</span><span class="price" id="total">RD$ 0</span></div>
+        </aside>
+    </main>
+    <div id="toast" class="toast" hidden></div>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/pago.js"></script>
+</body>
+
+</html>

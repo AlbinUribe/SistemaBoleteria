@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Eventos · TiquetaDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="eventos" data-rol="">
+    <header id="navbar"></header>
+    <main class="wrap">
+        <h1>Próximos eventos</h1>
+        <p class="muted" style="margin-bottom:18px">Encuentra tu próxima experiencia.</p>
+        <form id="formFiltros" class="card grid g4">
+            <div><label for="buscar">Buscar</label><input id="buscar" type="search" placeholder="Nombre del evento">
+            </div>
+            <div><label for="categoria">Categoría</label><select id="categoria">
+                    <option value="">Todas</option>
+                </select></div>
+            <div><label for="fecha">Fecha</label><input id="fecha" type="date"></div>
+            <button class="btn" type="submit">Buscar</button>
+        </form>
+        <div id="listaEventos" class="grid g3" style="margin-top:26px"></div>
+        <p id="vacio" class="muted" hidden>No se encontraron eventos con esos filtros.</p>
+        <template id="tplEvento">
+            <article class="card ev">
+                <div class="poster"></div>
+                <div class="in"><span class="tag"></span>
+                    <h3></h3>
+                    <p class="muted"></p>
+                    <p class="price"></p><a class="btn out" href="#">Ver detalle</a>
+                </div>
+            </article>
+        </template>
+    </main>
+    <div id="toast" class="toast" hidden></div>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/eventos.js"></script>
+</body>
+
+</html>
